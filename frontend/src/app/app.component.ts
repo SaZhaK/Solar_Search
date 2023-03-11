@@ -9,7 +9,9 @@ import {first, map, tap} from 'rxjs/operators';
   providers: [HttpClient]
 })
 export class AppComponent {
-  searchRequest = '';
+  BASE_URL = 'http://localhost:8080'
+
+  searchRequest = null;
   searchResponse = null;
   snippet = [];
   currentSnippetPath = null;
@@ -22,7 +24,7 @@ export class AppComponent {
     this.snippet = [];
     this.currentSnippetPath = null;
 
-    this.http.get('http://localhost:8080/search/' + this.searchRequest)
+    this.http.get(this.BASE_URL+ '/search/' + this.searchRequest)
       .pipe(
           first(),
           map(result => this.searchResponse = (result as any).lines)
@@ -36,15 +38,11 @@ export class AppComponent {
     const params = new HttpParams()
           .set('linePath', linePath)
           .set('lineNumber', lineNumber);
-    this.http.get('http://localhost:8080/search/snippet', {params})
+    this.http.get(this.BASE_URL + '/search/snippet', {params})
       .pipe(
           first(),
           map(result => this.snippet = (result as any))
       ).subscribe();
-  }
-
-  isCentralLine(index): boolean {
-    return index === 2;
   }
 
   reducePath(path): string {

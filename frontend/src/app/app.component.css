@@ -1,22 +1,46 @@
-.text-field {
-  margin-bottom: 1rem;
+.codeTable {
+  color: #939090;
+  background-color: #2b2b2b;
+}
+
+.centralCodeLine {
+  background-color: #323232;
+}
+
+.lineContent {
+  padding-left: 0.75rem;
+}
+
+.tableHeader {
+  width: calc(82.25rem - 4px);
+  height: 2.25rem;
+  margin-top: 1rem;
+  padding-left: 0.75rem;
+  padding-top: 0.5rem;
+  background-color: #fbfbfd;
+  border: 2px solid #e7e7e9;
+  border-bottom: none;
+  border-radius: 0.25rem 0.25rem 0 0;
 }
 
 #centralComponent {
-  margin: 10rem auto;
   width: 83rem;
+  margin: 10rem auto;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.5;
 }
 
 #searchForm {
-  margin: 1rem auto;
-  width: 83rem;
-  height: 3rem;
   display: flex;
+  width: inherit;
+  height: 3rem;
+  margin: 1rem auto;
 }
 
 #searchComponent {
+  width: inherit;
   height: calc(3rem + 2px);
-  width: 83rem;
   background-color: #fff;
   background-clip: padding-box;
   border: 2px solid #e7e7e9;
@@ -29,77 +53,35 @@
 }
 
 #searchInput {
-  height: 3rem;
   width: 78rem;
+  height: 3rem;
   font-family: inherit;
-  font-size: 1.25rem;
-  font-weight: 400;
-  line-height: 1.5;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
   color: #212529;
   border: none;
   outline: none;
 }
 
 #searchImage {
-  vertical-align: middle;
-  margin-left: 1rem;
-  margin-right: 0.5rem;
   width: 2rem;
   height: 2rem;
-}
-
-#currentSnippetPath {
-  padding-left: 0.75rem;
-  padding-top: 0.5rem;
-  margin-top: 1rem;
-  width: calc(82.25rem - 4px);
-  height: 2.25rem;
-  font-family: inherit;
-  font-size: 1.25rem;
-  font-weight: 400;
-  line-height: 1.5;
-  background-color: #fbfbfd;
-  border: 2px solid #e7e7e9;
-  border-bottom: none;
-  border-radius: 0.25rem 0.25rem 0 0;
+  margin-left: 1rem;
+  margin-right: 0.5rem;
+  vertical-align: middle;
 }
 
 #snippetTable {
+  width: inherit;
   margin-bottom: 1rem;
-  width: 83rem;
-  font-family: inherit;
-  font-size: 1.25rem;
-  font-weight: 400;
-  color: #939090;
-  line-height: 1.5;
   border-collapse: collapse;
 }
 
-#snippetTable td {
-  padding-left: 0.75rem;
-}
-
-#searchResultsTableHeader {
-  padding-left: 0.75rem;
-  padding-top: 0.5rem;
-  margin-top: 1rem;
-  width: calc(82.25rem - 4px);
-  height: 2.25rem;
-  font-family: inherit;
-  font-size: 1.25rem;
-  font-weight: 400;
-  line-height: 1.5;
-  background-color: #fbfbfd;
-  border: 2px solid #e7e7e9;
-  border-bottom: none;
-  border-radius: 0.25rem 0.25rem 0 0;
-}
-
 #searchResultsTableScrollableArea {
+  width: inherit;
   max-height: 14rem;
-  width: 83rem;
   overflow-y: scroll;
-  background-color: #2b2b2b;
 }
 
 #searchResultsTableScrollableArea::-webkit-scrollbar {
@@ -113,20 +95,11 @@
 
 #searchResultsTable {
   width: 82.25rem;
-  font-family: inherit;
-  font-size: 1.25rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #939090;
   border-collapse: collapse;
 }
 
-#searchResultsTable tr.active {
+#searchResultsTable tr.selectedLine {
   background-color: #2f64ca !important;
-}
-
-#searchResultsTable tr {
-  background-color: #2b2b2b;
 }
 
 #searchResultsTable tr:hover {
@@ -138,28 +111,27 @@
 }
 
 #searchResultsTable .lineContent {
-  padding-left: 0.75rem;
-  white-space: nowrap;
-  text-align: left;
   width: 45rem;
+  text-align: left;
+  white-space: nowrap;
 }
 
 #searchResultsTable .linePath {
+  width: 25rem;
   text-align: right;
   white-space: nowrap;
-  width: 25rem;
 }
 
 #searchResultsTable .lineNumber {
-  text-align: right;
   width: 1.7rem;
   padding-right: 5px;
+  text-align: right;
 }
 
 #noResultsComponent {
-  margin-top: 5rem;
-  width: 83rem;
   display: block;
+  width: inherit;
+  margin-top: 5rem;
   text-align: center;
 }
 
@@ -169,11 +141,9 @@
 }
 
 #noResultsText {
-  font-family: inherit;
+  display: block;
+  margin-top: 1.25rem;
   font-size: 1.7rem;
   font-weight: 500;
-  line-height: 1.5;
   color: #686666;
-  margin-top: 1.25rem;
-  display: block;
 }

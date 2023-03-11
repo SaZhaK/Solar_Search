@@ -6,25 +6,25 @@
     </div>
   </form>
 
-  <div id="currentSnippetPath" *ngIf="currentSnippetPath != null">
+  <div id="currentSnippetPath" class="tableHeader" *ngIf="currentSnippetPath != null">
     {{currentSnippetPath}}
   </div>
-  <table id="snippetTable">
+  <table id="snippetTable" class="codeTable">
     <tr *ngFor="let line of snippet; let i = index">
-      <td [ngStyle]="{'background-color': isCentralLine(i) ? '#323232' : '#2b2b2b'}">
+      <td class="lineContent" [ngClass]="{'centralCodeLine': i === 2}">
         {{replaceEmptyString(line)}}
       </td>
     </tr>
   </table>
 
-  <div id="searchResultsTableHeader" *ngIf="searchResponse != null && searchResponse.length !== 0">
+  <div id="searchResultsTableHeader" class="tableHeader" *ngIf="searchResponse != null && searchResponse.length !== 0">
     {{printMatches()}}
   </div>
 
-  <div id="searchResultsTableScrollableArea">
+  <div id="searchResultsTableScrollableArea" class="codeTable">
     <table id="searchResultsTable">
       <tr *ngFor="let line of searchResponse; let i = index" (click)="rowClick(i, line.path, line.lineNumber)"
-          [ngClass]="{'active': i === selectedRow}">
+          [ngClass]="{'selectedLine': i === selectedRow}">
         <td class="lineContent">{{line.content}}</td>
         <td class="linePath">{{reducePath(line.path)}}</td>
         <td class="lineNumber">{{line.lineNumber}}</td>
